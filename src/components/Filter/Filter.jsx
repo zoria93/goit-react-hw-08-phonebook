@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/filterSlice';
 import { Label, Span, Input } from 'components/Filter/Filter.styled';
 
-export const Filter = () => {
+const Filter = () => {
   const dispatch = useDispatch();
 
   const handleChangeFilters = e => {
@@ -17,3 +17,5 @@ export const Filter = () => {
     </Label>
   );
 };
+
+export default Filter;

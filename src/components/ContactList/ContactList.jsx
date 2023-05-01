@@ -1,8 +1,8 @@
 import { List } from 'components/ContactList/ContactList.styled';
 import { useSelector } from 'react-redux';
-import { ContactItemList } from 'components/ContactItemList/ContactItemList';
+import ContactItemList from 'components/ContactItemList/ContactItemList';
 
-export const ContactList = () => {
+const ContactList = () => {
   const contscts = useSelector(state => state.contacts.items);
   const filter = useSelector(state => state.filter);
 
@@ -23,3 +23,5 @@ export const ContactList = () => {
     </List>
   );
 };
+
+export default ContactList;

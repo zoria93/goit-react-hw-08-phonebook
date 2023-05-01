@@ -6,7 +6,7 @@ import {
   Button,
 } from 'components/ContactItemList/ContactItemList.styled';
 
-export const ContactItemList = ({ name, id, phone }) => {
+const ContactItemList = ({ name, id, phone }) => {
   const dispatch = useDispatch();
 
   const deleteContacts = () => {
@@ -28,3 +28,5 @@ ContactItemList.propTypes = {
   name: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
 };
+
+export default ContactItemList;

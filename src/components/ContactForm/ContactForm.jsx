@@ -10,7 +10,7 @@ import {
   Input,
 } from 'components/ContactForm/ContactForm.styled';
 
-export const ContactForm = () => {
+const ContactForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const contacts = useSelector(state => state.contacts.items);
@@ -94,3 +94,5 @@ export const ContactForm = () => {
     </Form>
   );
 };
+
+export default ContactForm;
