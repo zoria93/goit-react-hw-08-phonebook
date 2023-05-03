@@ -4,14 +4,14 @@ import Navigation from 'components/Navigation/Navigation';
 
 const SharedLayout = () => {
   return (
-    <container>
+    <>
       <header>
         <Navigation />
       </header>
       <Suspense>
         <Outlet />
       </Suspense>
-    </container>
+    </>
   );
 };
 
