@@ -10,7 +10,7 @@ const Navigation = () => {
     <>
       <nav>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/contacts">Contacts</NavLink>
+        {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
       </nav>
       {isLoggedIn ? (
         <UserMenu />

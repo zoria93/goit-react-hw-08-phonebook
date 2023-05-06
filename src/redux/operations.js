@@ -72,7 +72,14 @@ export const refreshUser = createAsyncThunk(
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
     try {
+      setAuthHeader(persistedToken);
       const response = await axios.get('/contacts');
       return response.data;
     } catch (e) {

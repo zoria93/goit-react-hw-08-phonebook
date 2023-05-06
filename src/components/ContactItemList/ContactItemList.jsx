@@ -6,7 +6,7 @@ import {
   Button,
 } from 'components/ContactItemList/ContactItemList.styled';
 
-const ContactItemList = ({ name, id, phone }) => {
+const ContactItemList = ({ name, id, number }) => {
   const dispatch = useDispatch();
 
   const deleteContacts = () => {
@@ -15,7 +15,7 @@ const ContactItemList = ({ name, id, phone }) => {
 
   return (
     <ListContacts>
-      {name}: {phone}
+      {name}: {number}
       <Button onClick={() => deleteContacts(id)} type="button">
         <span>Delete</span>
       </Button>
@@ -26,7 +26,7 @@ const ContactItemList = ({ name, id, phone }) => {
 ContactItemList.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };
 
 export default ContactItemList;

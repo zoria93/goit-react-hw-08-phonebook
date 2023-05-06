@@ -11,7 +11,7 @@ import {
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ const ContactForm = () => {
         setName(e.target.value);
         break;
       case 'phone':
-        setPhone(e.target.value);
+        setNumber(e.target.value);
         break;
 
       default:
@@ -53,14 +53,14 @@ const ContactForm = () => {
     }
     const newContact = {
       name,
-      phone,
+      number,
     };
     dispatch(addContact(newContact));
   };
 
   const reset = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -82,7 +82,7 @@ const ContactForm = () => {
         <Input
           type="tel"
           name="phone"
-          value={phone}
+          value={number}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required

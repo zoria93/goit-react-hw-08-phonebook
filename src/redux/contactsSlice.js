@@ -28,6 +28,7 @@ export const contactsSlice = createSlice({
 
     [addContact.pending]: handlePending,
     [addContact.fulfilled](state, action) {
+      console.log(action);
       state.isLoading = false;
       state.error = null;
       state.items.push(action.payload);

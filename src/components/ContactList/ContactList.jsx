@@ -17,8 +17,8 @@ const ContactList = () => {
 
   return (
     <List>
-      {contactsName.map(({ name, id, phone }) => {
-        return <ContactItemList key={id} name={name} id={id} phone={phone} />;
+      {contactsName.map(({ name, id, number }) => {
+        return <ContactItemList key={id} name={name} id={id} number={number} />;
       })}
     </List>
   );
