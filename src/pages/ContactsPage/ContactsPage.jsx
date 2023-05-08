@@ -5,7 +5,7 @@ import { selectIsLoading, selectError } from 'redux/selectors';
 import ContactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactList/ContactList';
-import { Div, FirstTitle, Title } from 'components/App.styled';
+import { Div, FirstTitle, Title } from 'pages/ContactsPage/ContactsPage.styled';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
