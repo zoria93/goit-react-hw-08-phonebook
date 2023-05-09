@@ -10,13 +10,19 @@ export const ListContacts = styled.li`
 export const Button = styled.button`
   display: block;
   border-radius: 4px;
-  border: 1px solid;
-  min-width: 100px;
-  min-height: 25px;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 1.9;
+  border: none;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  letter-spacing: 0.06em;
-  background-color: honeydew;
+  background-color: inherit;
+  border-radius: 50%;
+`;
+
+export const Div = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Span = styled.span`
+  margin-left: 10px;
 `;

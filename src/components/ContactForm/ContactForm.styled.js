@@ -35,3 +35,7 @@ export const Input = styled.input`
   border-radius: 9px;
   min-height: 20px;
 `;
+
+export const Text = styled.span`
+  margin-left: 5px;
+`;

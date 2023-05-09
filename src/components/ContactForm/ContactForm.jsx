@@ -1,12 +1,15 @@
 import { addContact } from 'redux/operations';
 import { useSelector, useDispatch } from 'react-redux';
+import { useToast } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
+import { AddIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
 import {
   Form,
   Label,
-  Button,
   Span,
   Input,
+  Text,
 } from 'components/ContactForm/ContactForm.styled';
 
 const ContactForm = () => {
@@ -14,6 +17,7 @@ const ContactForm = () => {
   const [number, setNumber] = useState('');
   const contacts = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
+  const toast = useToast();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -49,13 +53,26 @@ const ContactForm = () => {
           .toLowerCase()
     );
     if (duplicateName) {
-      return alert(`${name} is already in contacts`);
+      return toast({
+        title: 'Error!',
+        description: `${name} is already in contacts`,
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      });
     }
     const newContact = {
       name,
       number,
     };
     dispatch(addContact(newContact));
+    return toast({
+      title: 'Success!',
+      description: 'Contact successfully added.',
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    });
   };
 
   const reset = () => {
@@ -89,7 +106,10 @@ const ContactForm = () => {
           onChange={handleChange}
         />
       </Label>
-      <Button type="submit">Add contact</Button>
+      <Button type="submit" colorScheme="teal" size="md" width="40%">
+        <AddIcon />
+        <Text>Add contact</Text>
+      </Button>
     </Form>
   );
 };
